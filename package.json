@@ -1,0 +1,18 @@
+{
+  "name": "p5.playground",
+  "version": "0.0.1",
+  "description": "p5 playground",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.6.1",
+    "gulp-uglify": "^3.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dejan Tot",
+  "license": "ISC"
+}

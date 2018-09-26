@@ -1,0 +1,7 @@
+# Dependency directories
+node_modules/
+
+# Temporary files
+build/
+### Could be errors from this:
+package-lock.json
