@@ -3,6 +3,7 @@ class IslandScene {
         this.width = width;
         this.height = height;
         this.renderer = new MapRenderer(new MapPainter(scale));
+        this.debugRenderer = new PointsRenderer(new DefaultPointPainter(scale, color(0,100,50), scale));
         this.pipeline = this.initPipeline();
     }
 
@@ -15,7 +16,8 @@ class IslandScene {
                 y: Math.random() * this.height
             }
         }
-        pipeline.register(new AttractorNoiseFilter(attrs, 0.28, 0.1));
+        this.attrs = attrs;
+        pipeline.register(new AttractorNoiseFilter(attrs, 0.35, 0.1));
         // pipeline.register(new ChanceNoiseFilter(0.35));
         pipeline.register(new LifeFilter()
             .withStage(new LifeStage(21, 12, 3, 1))
@@ -32,6 +34,7 @@ class IslandScene {
         if (!this.map)
             return;
         this.renderer.render(this.map);
+        this.debugRenderer.render(this.attrs);
         noLoop();
     }
 }

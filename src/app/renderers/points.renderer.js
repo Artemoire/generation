@@ -1,16 +1,15 @@
 class PointsRenderer {
 
-    constructor(points, painter) {
-        this.points = points;
+    constructor(painter) {
         if (!painter)
-            this.painter = new BasicPointPainter();
+            this.painter = new DefaultPointPainter();
         else
             this.painter = painter;
     }
 
-    render() {
-        for (var i = 0; i < this.points.length; i++) {
-            this.painter.paint(i, this.points[i]);
+    render(points) {
+        for (var i = 0; i < points.length; i++) {
+            this.painter.paint(i, points[i]);
         }
     }
 
